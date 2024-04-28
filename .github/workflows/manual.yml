@@ -21,5 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run APP
-        run: npm start
+      - name: Run tests
+        run: npm test
+
+      - name: Check test output
+        run: |
+          if [[ $(npm test) == *"Server is running in PORT 3000"* ]]; then
+            echo "Test passed"
+          else
+            echo "Test failed"
+            exit 1
+          fi
