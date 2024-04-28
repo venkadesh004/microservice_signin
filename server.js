@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
     console.log(username, password);
 
     if (data[username] === password) {
-        res.redirect("localhost:5000/home/venkadesh");
+        res.status(200).redirect("localhost:5000/home/venkadesh");
     } 
 
     res.redirect("/");
@@ -31,3 +31,4 @@ app.post("/", (req, res) => {
 app.listen(3000, () => {
     console.log("Server is running in PORT 3000");
 }) 
+
