@@ -15,14 +15,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-    res.redirect("http://localhost:5000/home/venkadesh");
+    // res.redirect("http://localhost:5000/home/venkadesh");
     const username = req.body.username;
     const password = req.body.password;
 
     console.log(username, password);
 
     if (data[username] === password) {
-        res.status(200).redirect("localhost:5000/home/venkadesh");
+        res.redirect("https://microservice-signin.onrender.com/home/venkadesh");
     } 
 
     res.redirect("/");
