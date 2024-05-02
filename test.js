@@ -7,8 +7,11 @@ describe('GET /', () => {
         assert.ok(response.status === 200);
     });
     it('should return the item page', async () => {
-        const response = await request("http://localhost:5000").get('/');
+        const response = await request("https://microservice-signin.onrender.com").post('/').send({
+            username: 'venkadesh',
+            password: 'venkadesh'
+        });
         // console.log(response.status);
-        assert.ok(response.status === 200);
+        assert.ok(response.status === 302);
     });
 });
